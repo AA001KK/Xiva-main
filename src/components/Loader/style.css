@@ -1,0 +1,60 @@
+/* // $c-back: #1d1f20;
+// $c-back-light: #383838;
+// $s-footer-height: 3rem;
+
+// %boxShadow {
+//   box-shadow: 0 0 10rem 0 #000000;
+// }
+// %boxShadow--in {
+//   box-shadow: 0 0 10rem 0 #000000 inset;
+// } */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+/* body {
+  box-shadow: 0 0 10rem 0 #000000 inset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d1f20;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 100;
+  box-shadow: 0 0 10rem 0 #000000 inset;
+} */
+
+.svg-calLoader {
+  width: 230px;
+  height: 230px;
+  transform-origin: 115px 115px;
+  animation: 1.7s linear infinite loader-spin;
+}
+
+.cal-loader__plane {
+  fill: #EB864D;
+}
+.cal-loader__path {
+  stroke: #EC6416;
+  animation: 1.5s ease-in-out infinite loader-path;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-path {
+  0% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+  }
+  50% {
+    stroke-dasharray: 0, 450, 10, 30, 10, 30, 10, 30, 10;
+  }
+  100% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+  }
+}
