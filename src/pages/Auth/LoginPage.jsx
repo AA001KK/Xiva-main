@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { userRegistered } from "../../components/redux/slice/hotels_slice";
 import publicAxios from "../../api";
 import { useTranslation } from "react-i18next";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import DefaultBtn from "../../components/buttons/DefaultBtn";
 import Language from "../../components/Language/Language";
 import { setUser } from "../../components/redux/slice/user_slice";
@@ -72,17 +72,18 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen">
+    <div className="relative flex flex-col items-center justify-center h-screen ">
       <ToastContainer position="top-center" closeButton={false} />
-
       <div className="container flex items-center justify-center mx-auto ">
         <div className="z-10 flex items-center md:h-auto lg:static md:w-1/2">
           <div className=" 2xl:pt-[60px] relative px-4   md:px-0  login py-12 md:ps-[0px] xl:ps-[40px] flex flex-col justify-center   2xl:ps-[70px]">
             <div className="flex items-center justify-between ">
+              <Link to={"/"}>
               <SectionDesign
                 classNameList={" text-white   md:text-[#DCA500]  !font-mono"}
                 text={"Xiva Gould Tour"}
               />
+              </Link>
               <div className="rounded-full shadow-md">
                 <Language />
               </div>
@@ -169,7 +170,7 @@ const LoginPage = () => {
                     </div>
                   </div>
                   <DefaultBtn
-                    classNameList="px-[40px]"
+                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
                     loading={loading}
                     more={{ type: "submit" }}
                     txt={`main.forms.labels.loginTitle`}
@@ -178,10 +179,10 @@ const LoginPage = () => {
                 <div
                   to="/login"
                   className={
-                    "text-center    text-blue md:text-black  font-proppins  text-[14px] md:text-[18px] mt-[20px] w-full"
+                    "text-center flex gap-2 justify-center text-[#1A1A40] md:text-black  font-proppins  text-[14px] md:text-[18px] mt-[20px] w-full"
                   }
                 >
-                  <span>{t(`main.forms.labels.loginQuestion`)}</span>
+                  <span >{t(`main.forms.labels.loginQuestion`)}</span>
                   <NavLink to={"/register"} className="text-white md:text-main">
                     {t(`main.forms.labels.registerTitle`)}
                   </NavLink>

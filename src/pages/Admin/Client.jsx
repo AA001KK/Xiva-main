@@ -44,27 +44,27 @@ const Client = ({ order }) => {
       className=" border-b  lg:pb-0 pb-[20px] border-dashed border-grayLight lg:px-[30px] px-[10px] relative inline-block w-full text-left"
     >
       <div className="items-center justify-between lg:flex">
-        <div className=" md:flex items-center gap-2 ">
+        <div className="items-center gap-2 md:flex">
           <div className="flex items-center gap-2 ">
           <img
             className=" lg:w-[70px] lg:h-[70px] w-[40px] h-[40px]"
             src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg"
             alt=""
           />
-          <div className="div my-2 md:my-0">
+          <div className="my-2 div md:my-0">
             <h1>
               {order.user?.first_name} {order.user?.last_name}
             </h1>
-            <div className="p-1 py-0 text-white rounded-sm bg-green">
+            <div className="p-1 py-0 md:text-[14px]  text-[12px]  text-white rounded-sm bg-green">
               <h1>{order.user?.email}</h1>
             </div>
           </div>
           </div>
           <div className="div">
-            <h1  className="text-grayLight font-normal">
+            <h1  className="font-normal text-grayLight">
               Zakaz qilingan sana:
             </h1>
-            <div className="  rounded-sm ">
+            <div className="rounded-sm ">
             <DateDisplay
              dateString={order.createdAt} />
             </div>
@@ -72,7 +72,7 @@ const Client = ({ order }) => {
         
 
         </div>
-        <div className="flex mt-2 lg:mt-0  lg:gap-4  gap-2 flex-wrap flex-row">
+        <div className="flex flex-row flex-wrap gap-2 mt-2 lg:mt-0 lg:gap-4">
           <UserModal userInfo={order.user} />
           <button
             onClick={toggleDropdown}
@@ -213,7 +213,7 @@ const Client = ({ order }) => {
                               <h1>{t("hotels.price")}:</h1>
                               <span>{item.item.price} $</span>
                             </div>
-                            <div className="flex    flex-wrap items-center gap-3 ">
+                            <div className="flex flex-wrap items-center gap-3 ">
                               <h1 className=" flex items-center leading-3  gap-2 text-[15px] 2xl:text-[18px] text-grayLight font-mono font-normal">
                                 {t("hotels.totalPrice")}:
                               </h1>
@@ -276,7 +276,7 @@ const Client = ({ order }) => {
                               />
                             </div>
                           </div>
-                          <div className="flex  flex-col">
+                          <div className="flex flex-col">
                             <div className="flex items-end gap-3 font-mono text-grayLight text-[16px] 2xl:text-[18px]">
                               <h1>{t("hotels.price")}:</h1>
                               <span>{item.item.price} $</span>
@@ -307,7 +307,7 @@ const Client = ({ order }) => {
                   break;
               }
             })}
-            {user?.role !== "hotel_owner"?<div className="flex mb-4 justify-end gap-4 px-5">
+            {user?.role !== "hotel_owner"?<div className="flex justify-end gap-4 px-5 mb-4">
               <div onClick={goToMessage}>
                 <UniversalBtn text={"Tasdiqlash"} bg={"bg-green"} />
               </div>

@@ -31,7 +31,7 @@ const LinksAdmin = () => {
   return (
     <div>
       {user.role === "admin" && (
-        <ul className="flex links-admin__header gap-[40px] kombo-box overflow-x-scroll md:overflow-hidden">
+        <ul className="flex px-[10px] md:px-0 links-admin__header gap-[40px] kombo-box overflow-x-scroll md:overflow-hidden">
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -58,7 +58,7 @@ const LinksAdmin = () => {
               <h1>Mexmonxonachilar</h1>
             </NavLink>
           </li>
-          <li>
+          <li className="hidden lg:block">
             <DropdownHover links={links} />
           </li>
         </ul>

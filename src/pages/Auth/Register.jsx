@@ -6,7 +6,7 @@ import BgImg2 from "/src/assets/about/auth/register.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { userRegistered } from "../../components/redux/slice/hotels_slice";
 import publicAxios from "../../api";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Language from "../../components/Language/Language";
 import DefaultBtn from "../../components/buttons/DefaultBtn";
@@ -81,10 +81,12 @@ const Register = () => {
         <div className="z-10 flex items-center md:h-auto lg:static md:w-1/2">
           <div className=" 2xl:pt-[60px] relative px-4   md:px-0  login py-12 md:ps-[0px] xl:ps-[40px] flex flex-col justify-center   2xl:ps-[70px]">
             <div className="flex items-center justify-between ">
-              <SectionDesign
-                classNameList={" text-white   md:text-[#DCA500]  !font-mono"}
-                text={"Xiva Gould Tour"}
-              />
+              <Link to={"/"}>
+                <SectionDesign
+                  classNameList={" text-white   md:text-[#DCA500]  !font-mono"}
+                  text={"Xiva Gould Tour"}
+                />
+              </Link>
               <div className="rounded-full shadow-md">
                 <Language />
               </div>
@@ -115,8 +117,8 @@ const Register = () => {
                 >
                   <div className="flex flex-col items-start justify-start w-full">
                     <label
-                      htmlFor="firstName"
-                      className="cursor-pointer   text-black text-[13px] md:text-[16px] "
+                      htmlFor="first_name"
+                      className="cursor-pointer   text-white md:text-black  text-[13px] md:text-[16px] "
                     >
                       {t(`main.forms.labels.firstName`)}
                     </label>
@@ -128,8 +130,8 @@ const Register = () => {
                   </div>
                   <div className="flex flex-col items-start justify-start w-full">
                     <label
-                      htmlFor="lastName"
-                      className="cursor-pointer   text-black text-[13px] md:text-[16px] "
+                      htmlFor="last_name"
+                      className="cursor-pointer   text-white  md:text-black text-[13px] md:text-[16px] "
                     >
                       {t(`main.forms.labels.lastName`)}
                     </label>
@@ -139,7 +141,7 @@ const Register = () => {
                       title={t(`main.forms.inputs.lastName`)}
                     />
                   </div>
-                  <div className="flex w-full flex-col items-start justify-start">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <label
                       htmlFor="email"
                       className="cursor-pointer text-white  md:text-black   text-[13px] md:text-[16px] "
@@ -257,7 +259,7 @@ const Register = () => {
                   </div>
 
                   <DefaultBtn
-                    classNameList="px-[40px]"
+                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
                     txt={`main.forms.labels.registerTitle`}
                     loading={loading}
                     more={{ type: "submit" }}
@@ -266,7 +268,7 @@ const Register = () => {
                 <div
                   to="/login"
                   className={
-                    "text-center    text-blue md:text-black  font-proppins  text-[14px] md:text-[18px] mt-[20px] w-full"
+                    "text-center flex gap-2 justify-center text-[#1A1A40] md:text-black font-proppins text-[14px] md:text-[18px] mt-[20px] w-full"
                   }
                 >
                   {t(`main.forms.labels.registerQuestion`)}

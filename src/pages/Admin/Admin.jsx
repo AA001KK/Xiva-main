@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Admin = () => {
   const loaderRedux = useSelector((state) => state.hotels.loaderRedux);
-  console.log(loaderRedux);
 
   return (
     <div className=" bg-[#F4F7FD]   h-[100vh]">
