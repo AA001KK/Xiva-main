@@ -292,7 +292,6 @@ function HotelBookingCalendar2({ link }) {
           </div>
           <Link to={link}>
             <div className="relative   px-[20px] lg:px-[30px] py-[10px] ">
-              <UniversalBtn bg={"bg-main"} txt={"main.buttons.find"} />
             </div>
           </Link>
         </div>

@@ -4,8 +4,9 @@ import useFetch from "../../hooks/useFetch";
 import Car from "./Car";
 import FilterCheckbox from "../../components/Header/FilterCheckbox";
 import Pagination from "../../components/Pagination";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import HotelBookingCalendar2 from "../../components/Hotel/Hotel";
+import UniversalBtn from "../../components/buttons/UniversalBtn";
 
 const Cars = () => {
   const [searchParams, setParams] = useSearchParams();
@@ -45,8 +46,13 @@ const Cars = () => {
         {!loading &&
           cars?.map((car, idx) => {
             return <Car key={idx} car={car} />;
-          })}     
+          })}
         <Pagination data={data} refresh={(query) => refresh(`cars?${query}`)} />
+        <div className="flex justify-end">
+          <Link to={"/translators"}>
+            <UniversalBtn bg={"bg-main"} txt={"main.buttons.next"} />
+          </Link>
+        </div>
       </div>
     )
   );

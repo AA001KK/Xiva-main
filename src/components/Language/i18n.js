@@ -118,6 +118,7 @@ i18next
               cabinet: "Кабинет",
               cancel: "Отменить",
               success: "Добавлено в корзину",
+              next:"Следующий"
             },
             hotelFilters: {
               byudjet: "Ваш бюджет (за ночь)",
@@ -641,6 +642,7 @@ i18next
               cabinet: "Cabinet",
               cancel: "Cancel",
               success: "Аdded to cart",
+               next:"Next"
             },
             hotelFilters: {
               byudjet: "Your budget (per night)",
@@ -922,6 +924,7 @@ i18next
               cabinet: "Kabinett",
               cancel: "Abbrechen",
               success: "In den Warenkorb gelegt",
+               next:"Nächste"
             },
             hotelFilters: {
               byudjet: "Ihr Budget (pro Nacht)",
@@ -1246,6 +1249,7 @@ i18next
               cabinet: "个人中心",
               cancel: "取消",
               success: "已加入购物车",
+              next:"下一个"
             },
             hotelFilters: {
               byudjet: "您的预算（每晚）",

@@ -15,6 +15,7 @@ import area from "/src/assets/hotels/area.svg";
 import BtnImgModal from "../../../components/Modals/BtnImgModal";
 import MuchDescription from "../../../components/typography/MuchDescription";
 import SwiperCar from "../../Cars/SwiperCar";
+import UniversalBtn from "../../../components/buttons/UniversalBtn";
 
 const HotelDynamic = () => {
   const lang = localStorage.getItem("i18nextLng");
@@ -188,11 +189,18 @@ const HotelDynamic = () => {
                 </div>
                 <div className="flex justify-between font-mono md:text-[17px] text-[14px] py-[10px] border-dashed md:px-[20px] px-[10px] border-grayLight">
                   <h1>{t("hotels.totalPrice")}:</h1>
-                  <span className="text-main lg:text-[20px]  md:text-[17px] text-[14px] font-medium">{cart.total_price}$</span>
+                  <span className="text-main lg:text-[20px]  md:text-[17px] text-[14px] font-medium">
+                    {cart.total_price}$
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-end">
+          <Link to={"/car"}>
+            <UniversalBtn bg={"bg-main"} txt={"main.buttons.next"} />
+          </Link>
         </div>
         <div className=" md:hidden">
           <HotelTable />

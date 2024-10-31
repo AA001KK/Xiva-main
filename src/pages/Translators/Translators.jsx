@@ -4,8 +4,9 @@ import { filterTranslator } from "../../constants";
 import FilterCheckbox from "../../components/Header/FilterCheckbox";
 import useFetch from "../../hooks/useFetch";
 import Pagination from "../../components/Pagination";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import HotelBookingCalendar2 from "../../components/Hotel/Hotel";
+import UniversalBtn from "../../components/buttons/UniversalBtn";
 
 const Translators = () => {
   const [searchParams, setParams] = useSearchParams();
@@ -48,12 +49,17 @@ const Translators = () => {
           classNameList={""}
         />
         {translators?.map((item, idx) => (
-          <Translator key={idx}  translatorData={item} />
+          <Translator key={idx} translatorData={item} />
         ))}
         <Pagination
           data={data}
           refresh={(query) => refresh(`translators?${query}`)}
         />
+        <div className="flex justify-end">
+          <Link to={"/basket"}>
+            <UniversalBtn bg={"bg-main"} txt={"main.buttons.next"} />
+          </Link>
+        </div>
       </div>
     )
   );

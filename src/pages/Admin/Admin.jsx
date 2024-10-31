@@ -14,7 +14,7 @@ const Admin = () => {
       <AdminHeader />
       <ToastContainer position="top-center" closeButton={false} />
 
-      <div className="my-4 md:hidden">
+      <div className=" md:hidden">
         <LinksAdmin />
       </div>
       {loaderRedux && (

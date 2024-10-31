@@ -31,7 +31,7 @@ const LinksAdmin = () => {
   return (
     <div>
       {user.role === "admin" && (
-        <ul className="flex px-[10px] md:px-0 links-admin__header gap-[40px] kombo-box overflow-x-scroll md:overflow-hidden">
+        <ul className="flex px-[20px] justify-center  bg-white py-4 lg:py-0 md:px-0 links-admin__header gap-[40px] kombo-box  ">
           <li>
             <NavLink
               className={({ isActive }) =>
