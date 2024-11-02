@@ -52,6 +52,7 @@ const Translators = () => {
           <Translator key={idx} translatorData={item} />
         ))}
         
+        
         <Pagination
           data={data}
           refresh={(query) => refresh(`translators?${query}`)}
