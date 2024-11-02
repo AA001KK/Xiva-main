@@ -1,0 +1,58 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-top: 60px;
+  /* overflow: visible; */
+  padding-bottom: 50px;
+}
+@media screen and (min-width:600px) {
+  .swiper {
+    margin-top: 50px;
+  padding:  60px 20px 20px  20px;
+
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  overflow-y: visible;
+  height: max-content;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media only screen and(min-width:640px) {
+  .swiper-slide {
+    /* overflow: visible; */
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
