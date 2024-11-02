@@ -51,6 +51,7 @@ const Translators = () => {
         {translators?.map((item, idx) => (
           <Translator key={idx} translatorData={item} />
         ))}
+        
         <Pagination
           data={data}
           refresh={(query) => refresh(`translators?${query}`)}
