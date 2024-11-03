@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const PhoneInputForm = ({func}) => {
-  const [phone, setPhone] = useState("");
+const PhoneInputForm = ({func, phone, setPhone}) => {
 
   const handlePhoneChange = (value) => {
     setPhone(value);
-    console.log(value);
-    
   };
+
+  const isRequired = phone.length > 5;
 
   return (
     <PhoneInput
@@ -19,10 +18,11 @@ const PhoneInputForm = ({func}) => {
       preferredCountries={["uz", "ru", "us"]}
       inputProps={{
         name: "phone",
-        required: true,
+        required:true,
+        pattern: ".{12,}",
+        title: "Введите номер правильно",
       }}
-    
-      onChange={func}
+      onChange={handlePhoneChange}
       
     />
   );

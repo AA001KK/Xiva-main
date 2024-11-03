@@ -7,7 +7,10 @@ import { useTranslation } from "react-i18next";
 const HotelCard = ({ hotel }) => {
   const [hover, setHover] = useState(false);
 
-  const {i18n:{language: lang},t} = useTranslation()
+  const {
+    i18n: { language: lang },
+    t,
+  } = useTranslation();
   return (
     <div className=" relative shadow-md rounded-[8px] lg:rounded-[10px] lg:p-[15px] p-[10px] pb-[20px] lg:pb-[25px]">
       <Link to={`/hotels/${hotel._id}`}>
@@ -39,16 +42,19 @@ const HotelCard = ({ hotel }) => {
           </Link>
         </div>
 
-        <div className=" flex-col flex w-full   lg:gap-[10px] gap-[5px]  "> 
+        <div className=" flex-col flex w-full   lg:gap-[10px] gap-[5px]  ">
           <div className="flex justify-between">
             <StarsHotel numStars={hotel.stars} />
-            <h3 className="flex text-main  font-display  items-center text-[22px]">
+            <h3 className="flex text-main  y  items-center text-[22px]">
               <span className="">$</span>
               {hotel.price}
             </h3>
           </div>
-          <Link to={`${hotel._id}`} className="flex justify-center w-full text-center">
-            <UniversalBtn txt={"main.buttons.showPrice"} bg={"bg-main"}/>
+          <Link
+            to={`${hotel._id}`}
+            className="flex justify-center w-full text-center"
+          >
+            <UniversalBtn txt={"main.buttons.showPrice"} bg={"bg-main"} />
           </Link>
         </div>
       </div>

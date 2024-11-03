@@ -8,6 +8,7 @@ import { contactData } from "../../../constants";
 
 const Contact = () => {
   const [object, setObject] = useState({});
+  const [phone, setPhone] = useState("");
 
   const [loading, setLoading] = useState(false);
 
@@ -23,11 +24,11 @@ const Contact = () => {
     });
   };
 
-  const changeHandlerNumber = (value) => {
+  const changeHandlerNumber = (phone) => {
     setObject((prev) => {
       prev = {
         ...prev,
-        phone: value,
+        phone: phone,
       };
       const res = prev;
       return res;
@@ -36,6 +37,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    changeHandlerNumber(phone);
     setLoading(true);
     try {
       // publicAxios.post("contact", object);
@@ -56,7 +58,7 @@ const Contact = () => {
           {t(`sectionsData.contactSection.subtitle`)}
         </h3>
         <div className="mt-[30px] 2xl:mt-[40px] ">
-          <div className="flex items-center gap-4 font-display">
+          <div className="flex items-center gap-4 y">
             <div className="border font-serif max-w-[35px] max-h-[35px] md:max-w-[42px] md:max-h-[42px]  border-white rounded-[50%] p-2  flex justify-center items-center">
               <a href={`tel:${contactData.tel}`}>
                 <svg
@@ -146,7 +148,7 @@ const Contact = () => {
             htmlFor="name"
             className="text-[14px] font-mono 2xl:text-[16px]"
           >
-            {t(`main.forms.labels.name`)}  
+            {t(`main.forms.labels.name`)}
           </label>
           <div className="focus-within:shadow-shadowInput transition-all w-full flex mt-1 items-center rounded-[4px] ps-[15px] bg-white border-dashed border border-main  ">
             <input
@@ -155,7 +157,7 @@ const Contact = () => {
               required
               onChange={changeHandlerSelf}
               className="py-[8px] w-full px-[15px] ps-0 text-[14px] md:text-[16px] font-proppins outline-none rounded-[6px]  "
-              placeholder={t(`main.forms.inputs.name`)} 
+              placeholder={t(`main.forms.inputs.name`)}
             />
           </div>
         </div>
@@ -186,7 +188,7 @@ const Contact = () => {
             {t(`main.forms.labels.phone`)}
           </label>
           <div className="focus-within:shadow-shadowInput transition-all w-full flex mt-1 items-center rounded-[4px]  bg-white border-dashed border border-main  ">
-            <PhoneInputForm func={changeHandlerNumber} />
+            <PhoneInputForm phone={phone} setPhone={setPhone} />
           </div>
         </div>
         <div>
@@ -206,7 +208,7 @@ const Contact = () => {
           ></textarea>
         </div>
         <div className="flex justify-end">
-          <UniversalBtn  txt={"main.buttons.contactBtn"} bg={"bg-main"} />
+          <UniversalBtn txt={"main.buttons.contactBtn"} bg={"bg-main"} />
         </div>
       </form>
     </div>
