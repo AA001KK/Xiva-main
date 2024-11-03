@@ -44,6 +44,8 @@ const AddTranslator = () => {
     checkFormValidity();
   };
 
+  console.log(img)
+
   const changeHandlerSelf = (e) => {
     const { name, value } = e.target;
     setObject((prev) => {

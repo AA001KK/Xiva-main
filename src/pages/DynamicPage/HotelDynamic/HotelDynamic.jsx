@@ -16,6 +16,7 @@ import BtnImgModal from "../../../components/Modals/BtnImgModal";
 import MuchDescription from "../../../components/typography/MuchDescription";
 import SwiperCar from "../../Cars/SwiperCar";
 import UniversalBtn from "../../../components/buttons/UniversalBtn";
+import DateRangeComponent from "../../../components/helpers/DateRangeComponent";
 
 const HotelDynamic = () => {
   const lang = localStorage.getItem("i18nextLng");
@@ -25,6 +26,7 @@ const HotelDynamic = () => {
   let rooms_basket = cart?.items?.filter((item) => item.type == "hotel");
 
   const { t, i18n } = useTranslation();
+  console.log(cart);
 
   return (
     !loading && (
@@ -136,13 +138,16 @@ const HotelDynamic = () => {
                   {t("hotels.yourBooking")}
                 </div>
                 <div className=" py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
-                  1 {t("hotels.day")}
+                  {rooms_basket[0].days_quantity} {t("hotels.day")}
                 </div>
                 <div className=" py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
-                  <h1>11 avgust - 12 avgust</h1>
-                  <h1 className="font-normal text-grayLight">
-                    Shanba Payshanba
-                  </h1>
+                  {rooms_basket[0]?.date?.start ? (
+                    <DateRangeComponent
+                      startDate={rooms_basket[0]?.date?.start}
+                      endDate={rooms_basket[0]?.date?.end}
+                      language={lang}
+                    /> 
+                  ):""}
                 </div>
                 <div className="md:text-[17px] text-[14px] py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
                   <h1>{t("hotels.selectedRooms")}</h1>

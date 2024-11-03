@@ -36,7 +36,7 @@ const TitlePage = ({
         formData.append("images", images[i]);
       }
     } else {
-      formData.append("images", images[0]);
+      formData.append("images", images);
     }
 
     if (formData) {

@@ -27,7 +27,7 @@ const AdminHome = () => {
       <PageDesign>
         <TitlePage title={"Mijozlar"} />
         <div className="relative flex flex-col">
-          {data.items.map((order, idx) => {
+          {data?.items?.map((order, idx) => {
             return  <Client order={order} key={idx} />;
           })}
         </div>

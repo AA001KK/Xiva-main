@@ -14,7 +14,7 @@ const OwnerClients = () => {
     `${defaultApi}${searchParams.toString()}`
   );
   return (
-    <PageDesign>
+  !loading &&  <PageDesign>
       <TitlePage title={"Mijozlar"} />
 
       <div className="relative flex flex-col">

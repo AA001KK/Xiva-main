@@ -60,7 +60,7 @@ export default function HotelOwners() {
   };
 
   return (
-    <PageDesign>
+ <PageDesign>
       <TitlePage title="Admin va mehmonhonachilar" />
       <div className="md:flex flex-row items-start 2xl:gap-6 gap-4 lg:py-6 py-3  px-[10px] lg:px-4">
         <div className="flex  flex-col  p-2 py-4 lg:p-4 font-mono border border-solid rounded-md shadow-sm border-border">

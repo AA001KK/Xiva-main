@@ -10,10 +10,10 @@ import useFetch from "../../../../hooks/useFetch";
 import TitlePage from "../../components/TitlePage";
 
 const BlogsAdmin = () => {
-  const { data } = useFetch("blogs?limit=100");
+  const { data, loading } = useFetch("blogs?limit=100");
   const blogs = data.items || [];
   return (
-    <PageDesign>
+    !loading &&  <PageDesign>
       <TitlePage add title={"Saytga joylangan Bloglar"} link={"add"} />
       <div className="px-[20px]  pb-[60px] pt-0">
         {blogs?.map((item, idx) => {

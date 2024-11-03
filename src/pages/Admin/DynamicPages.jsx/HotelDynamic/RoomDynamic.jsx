@@ -109,7 +109,6 @@ const RoomDynamic = ({ roomData, id }) => {
     checkFormValidity();
   }, [object]);
 
-
   return (
     <div className=" my-[50px]  flex justify-between px-[30px]">
       <div>
@@ -313,7 +312,11 @@ const RoomDynamic = ({ roomData, id }) => {
           </select>
         </div>
         <TitlePage
-          link={`hotels/hotel/${id}/room/${roomData?._id}`}
+          link={
+            roomData
+              ? `hotels/hotel/${id}/room/${roomData?._id}`
+              : `hotels/hotel/${id}/room`
+          }
           navigaPage={`/hotel-owner`}
           classNameList={"!border-b-0 !p-0 !items-end"}
           save={!roomData ? true : false}
