@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { langs } from "../../constants";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
@@ -9,11 +9,30 @@ const Language = () => {
   const [activeLang, setActiveLang] = useState(lang || "");
 
   const changeLanguage = (lang) => {
-    // location.reload();
     i18n.changeLanguage(lang);
     setActiveLang(lang);
-
   };
+
+  useEffect(() => {
+    // Список доступных языков
+    const availableLanguages = ["ru", "en", "de", "zh"];
+
+    // Получаем язык из localStorage и обрезаем до первых двух символов
+    let langValue = localStorage.getItem("i18nextLng");
+    langValue = langValue ? langValue.slice(0, 2) : "ru"; // 'ru-RU' → 'ru'
+
+    // Проверяем, доступен ли язык в списке
+    if (!availableLanguages.includes(langValue)) {
+      langValue = "ru"; // Устанавливаем язык по умолчанию, если язык недоступен
+    }
+
+    // Сохраняем обрезанное значение в localStorage
+    localStorage.setItem("i18nextLng", langValue);
+
+    // Устанавливаем язык в i18next
+    i18n.changeLanguage(langValue);
+    setActiveLang(langValue);
+  }, []);
 
   return (
     <Menu>

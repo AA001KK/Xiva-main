@@ -1,6 +1,6 @@
 import Mail from "/src/assets/mail.svg";
 import SectionDesign from "/src/components/typography/SectionDesign.jsx";
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
 import BgImg2 from "/src/assets/about/auth/register.svg";
 import { useDispatch } from "react-redux";
 import { userRegistered } from "../../components/redux/slice/hotels_slice";
@@ -13,6 +13,8 @@ import { setUser } from "../../components/redux/slice/user_slice";
 import Input from "../../components/Form/Input";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import i18n from "i18next";
+
 const LoginPage = () => {
   const { t, i18n } = useTranslation();
   const router = useNavigate();
@@ -21,6 +23,28 @@ const LoginPage = () => {
   const [loginInfo, setLoginInfo] = useState();
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
+
+  useEffect(() => {
+    // Список доступных языков
+    const availableLanguages = ["ru", "en", "de", "zh"];
+    
+    // Получаем язык из localStorage и обрезаем до первых двух символов
+    let langValue = localStorage.getItem("i18nextLng");
+    langValue = langValue ? langValue.slice(0, 2) : "ru"; // 'ru-RU' → 'ru'
+    
+    // Проверяем, доступен ли язык в списке
+    if (!availableLanguages.includes(langValue)) {
+      langValue = "ru"; // Устанавливаем язык по умолчанию, если язык недоступен
+    }
+  
+    // Сохраняем обрезанное значение в localStorage
+    localStorage.setItem("i18nextLng", langValue);
+  
+    // Устанавливаем язык в i18next
+    i18n.changeLanguage(langValue);
+    
+  }, []);
+  
   const openEmail = () => {
     setActiveEmail(!activeEmail);
   };

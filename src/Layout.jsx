@@ -8,14 +8,33 @@ import Footer from "./components/footer/Footer";
 import ImgModal from "./components/Modals/ImgModal";
 import HeaderLinks from "./components/Header/HeaderMenu/HeaderLinks";
 import { ToastContainer, toast } from "react-toastify";
+import i18n from "i18next";
 import "react-toastify/dist/ReactToastify.css";
 const Layout = () => {
   const loaderRedux = useSelector((state) => state.hotels.loaderRedux);
+
+
   useEffect(() => {
+    // Список доступных языков
+    const availableLanguages = ["ru", "en", "de", "zh"];
+    
+    // Получаем язык из localStorage и обрезаем до первых двух символов
     let langValue = localStorage.getItem("i18nextLng");
-    let lang = "ru";
-    localStorage.setItem("i18nextLng", lang);
+    langValue = langValue ? langValue.slice(0, 2) : "ru"; // 'ru-RU' → 'ru'
+    
+    // Проверяем, доступен ли язык в списке
+    if (!availableLanguages.includes(langValue)) {
+      langValue = "ru"; // Устанавливаем язык по умолчанию, если язык недоступен
+    }
+  
+    // Сохраняем обрезанное значение в localStorage
+    localStorage.setItem("i18nextLng", langValue);
+  
+    // Устанавливаем язык в i18next
+    i18n.changeLanguage("ru");
   }, []);
+  
+
   return (
     <div className="relative flex flex-col h-screen">
       <HeaderTop />

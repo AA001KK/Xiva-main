@@ -3,10 +3,12 @@ import { getUser } from "../../redux/slice/user_slice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { lang } from "../../../constants";
 
 const Login = () => {
   const {t} = useTranslation()
   const { user } = useSelector(getUser);
+
   return user.email ? (
     <User user={user} />
   ) : (

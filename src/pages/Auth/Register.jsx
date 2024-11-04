@@ -126,6 +126,7 @@ const Register = () => {
                       id={"first_name"}
                       func={changeUserInfo}
                       title={t(`main.forms.inputs.name`)}
+                      required={true}
                     />
                   </div>
                   <div className="flex flex-col items-start justify-start w-full">
@@ -139,6 +140,8 @@ const Register = () => {
                       id={"last_name"}
                       func={changeUserInfo}
                       title={t(`main.forms.inputs.lastName`)}
+                      required={true}
+
                     />
                   </div>
                   <div className="flex flex-col items-start justify-start w-full">
@@ -154,6 +157,8 @@ const Register = () => {
                       type={"email"}
                       txt={"main.forms.inputs.email"}
                       func={changeUserInfo}
+                      required={true}
+
                     />
                   </div>
                   <div className="flex flex-col items-start justify-start w-full">

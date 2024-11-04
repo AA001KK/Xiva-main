@@ -1,8 +1,10 @@
 import axios from "axios";
 import { lang } from "../constants";
+let langValue = localStorage.getItem("i18nextLng")
 
 const publicAxios = axios.create({
-  baseURL: `https://old-khiva-server.onrender.com/api/${lang}`,
+  
+  baseURL: `https://old-khiva-server.onrender.com/api/${langValue}`,
   // baseURL: `http://localhost:5000/api/${lang}`,
 });
 
