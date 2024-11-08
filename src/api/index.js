@@ -4,7 +4,7 @@ let langValue = localStorage.getItem("i18nextLng")
 
 const publicAxios = axios.create({
   
-  baseURL: `https://old-khiva-server.onrender.com/api/${langValue}`,
+  baseURL: `https://old-khiva-server.onrender.com/api/ru`,
   // baseURL: `http://localhost:5000/api/${lang}`,
 });
 
