@@ -1,12 +1,12 @@
 import { toast } from "react-toastify";
 import publicAxios from "../../../api";
 
-const editToast = async (link, navigaPage, navigate, newFile, reload) => {
+const editToast = async (link, navigaPage, navigate, newFile, reload, txt) => {
   const toastId = toast.loading("Iltimos, kuting...");
   try {
     const { data } = await publicAxios.put(`${link}`, newFile);
     toast.update(toastId, {
-      render: data.ok==="Zakaz bekor qilindi"?data.ok:"Zakaz qabul qilindi",
+      render: data.ok,
       type: "success",
       isLoading: false,
       autoClose: 3000, // 3  soniyadan keyin yopiladi

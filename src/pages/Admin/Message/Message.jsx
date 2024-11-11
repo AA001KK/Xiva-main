@@ -40,15 +40,6 @@ const Message = () => {
     );
   };
 
-  // useEffect(() => {
-  //   setObject(
-  //     (prev) =>
-  //       (prev = {
-  //         email: state?.email,
-  //       })
-  //   );
-  // }, []);
-
   return (
     <div className=" ">
       <PageDesign>

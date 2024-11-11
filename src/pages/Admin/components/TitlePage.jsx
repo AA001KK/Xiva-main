@@ -31,7 +31,7 @@ const TitlePage = ({
   const handleAddClick = () => {
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
-    if ( Array.isArray(images.length)) {
+    if ( Array.isArray(images)) {
       for (let i = 0; i < images.length; i++) {
         formData.append("images", images[i]);
       }
@@ -41,12 +41,11 @@ const TitlePage = ({
 
     if (formData) {
       if (formFull) {
-        console.log(images);
-
         return showAddSwal(link, navigaPage, navigate, formData, reload);
-      } else {
-        showErrorAlert("Ma'lumot to'liq emas");
-      }
+      } 
+      // else {
+      //   showErrorAlert("Ma'lumot to'liq emas");
+      // }
     }
   };
   const updateItem = () => {
@@ -57,7 +56,7 @@ const TitlePage = ({
       JSON.stringify(single ? data : { ...data, images: oldImages })
     );
 
-    if (Array.isArray(images.length)) {
+    if (Array.isArray(images)) {
       for (let i = 0; i < images.length; i++) {
         formData.append("images", images[i]);
       }

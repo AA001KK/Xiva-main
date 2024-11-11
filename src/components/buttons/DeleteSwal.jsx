@@ -38,7 +38,7 @@ const showDeleteSwal = (link, navigaPage, navigate, reload) => {
         .then((data) => {
           Swal.fire({
             title: "O'chirildi!",
-            text: "Hujjat muvaffaqiyatli o'chirildi.",
+            text: "Fayl muvaffaqiyatli o'chirildi.",
             icon: "success",
             timer: 2000,
             timerProgressBar: true,
@@ -54,7 +54,7 @@ const showDeleteSwal = (link, navigaPage, navigate, reload) => {
         .catch((error) => {
           Swal.fire(
             "Xatolik",
-            "Hujjatni o'chirishda xatolik yuz berdi.",
+            "Faylni o'chirishda xatolik yuz berdi.",
             "error"
           );
         });
