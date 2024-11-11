@@ -203,7 +203,7 @@ const HotelDynamic = () => {
           </div>
         </div>
         <div className="flex justify-end">
-          <Link to={"/car"}>
+          <Link to={"/cars"}>
             <UniversalBtn bg={"bg-main"} txt={"main.buttons.next"} />
           </Link>
         </div>
