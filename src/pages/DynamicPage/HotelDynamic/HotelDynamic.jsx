@@ -138,7 +138,7 @@ const HotelDynamic = () => {
                   {t("hotels.yourBooking")}
                 </div>
                 <div className=" py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
-                  {rooms_basket[0].days_quantity} {t("hotels.day")}
+                  {rooms_basket[0]?.days_quantity} {t("hotels.day")}
                 </div>
                 <div className=" py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
                   {rooms_basket[0]?.date?.start ? (
