@@ -27,6 +27,7 @@ const BlogDynamicAdmin = () => {
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
+  
     if (file) {
       setImg(file);
       setImgPreview(URL.createObjectURL(file));
@@ -73,8 +74,6 @@ const BlogDynamicAdmin = () => {
     });
   };
 
-
- console.log(imgPreview)
 
   return (
     !loading && (
@@ -148,6 +147,15 @@ const BlogDynamicAdmin = () => {
               </div>
               <div className=" flex-1   text-[16px] flex flex-col items-center font-normal   ">
                 <h1 className="">Rasm Yuklash*</h1>
+                {imgPreview && (
+                    <div
+                      className="
+                    relative z-10 cursor-pointer right-[-182px] top-[35px] bg-[#FF0000] rounded-br-none rounded-bl-[12px] rounded-tl-none w-[35px] h-[35px] flex justify-center items-center"
+                      onClick={handleRemoveImage}
+                    >
+                      <i className="fa-solid fa-trash text-[#FFFFFF]" />
+                    </div>
+                  )}
 
                 <label
                   htmlFor="image"
@@ -163,15 +171,8 @@ const BlogDynamicAdmin = () => {
                       imgPreview ? " hidden" : " block"
                     } opacity-0 absolute  `}
                     id="image"
-                  />
-                  {imgPreview && (
-                    <div
-                      className="absolute cursor-pointer top-0 right-0 bg-[#FF0000] rounded-br-none rounded-bl-[12px] rounded-tl-none w-[35px] h-[35px] flex justify-center items-center"
-                      onClick={handleRemoveImage}
-                    >
-                      <i className="fa-solid fa-trash text-[#FFFFFF]" />
-                    </div>
-                  )}
+                    />
+                  
                   {/* Отображаем загруженное изображение или показываем дизайн */}
                   {imgPreview ? (
                     <img
@@ -226,7 +227,7 @@ const BlogDynamicAdmin = () => {
               <h1>Blog haqida ma'lumotlar*</h1>
 
               {LANGUAGES.map((item, idx) => (
-                <div className="flex   mt-[30px]  justify-between items-baseline w-full gap-4">
+                <div key={idx} className="flex   mt-[30px]  justify-between items-baseline w-full gap-4">
                   <img
                     src={item.image}
                     className="w-[40px] object-cover h-[25px] rounded-sm"

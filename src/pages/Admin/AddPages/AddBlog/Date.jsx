@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import CalendarImg from "/src/assets/about/calendar/calendar.svg";
 
 const DateInput = ({ changeHandlerDate, defaultDate }) => {
-  const [selectedDate, setSelectedDate] = useState(defaultDate || new Date());
+  const [selectedDate, setSelectedDate] = useState(defaultDate);
 
   const handleChange = (date) => {
     setSelectedDate(date);
@@ -21,6 +21,7 @@ const DateInput = ({ changeHandlerDate, defaultDate }) => {
         dateFormat="dd/MM/yyyy"
         id="date"
         defaultDate={defaultDate}
+        placeholderText="Sanani kiriting"
         className=" outline-none  "
       />
       <label className=" cursor-pointer" htmlFor="date">

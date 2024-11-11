@@ -100,7 +100,7 @@ const HotelDynamic = () => {
             <div className="rounded-[5px] md:rounded-[10px] flex flex-col  my-[20px] border border-dashed p-[8px] md:p-[15px] border-grayLight ">
               {hotel.rates.map((item, idx) => {
                 return (
-                  <div className="w-full font-mono text-[12px] md:text-[14px] font-medium text-black">
+                  <div key={idx} className="w-full font-mono text-[12px] md:text-[14px] font-medium text-black">
                     <h1>{t("hotels.rates.rate" + idx)}</h1>
                     <div className="flex items-center w-full gap-3 item">
                       <RangeBar rate={item.rate * 10} />
@@ -151,8 +151,8 @@ const HotelDynamic = () => {
                 </div>
                 <div className="md:text-[17px] text-[14px] py-[10px] border-b border-dashed md:px-[20px] px-[10px] border-grayLight">
                   <h1>{t("hotels.selectedRooms")}</h1>
-                  {rooms_basket?.map((item) => (
-                    <div className="my-1 ">
+                  {rooms_basket?.map((item, idx) => (
+                    <div key={idx} className="my-1 ">
                       <div className="flex items-center justify-between font-medium ">
                         <h1 className="mt-1 text-main">
                           {item.item[lang]?.room_name}

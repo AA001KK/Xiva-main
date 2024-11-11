@@ -22,7 +22,7 @@ const UserModal = ({ userInfo }) => {
         onClick={toggleModal}
         className="flex items-center justify-between bg-[#4A90E2] text-white rounded-md lg:rounded-lg px-4 py-2 lg:py-3 lg:px-6 transition-all duration-300 ease-in-out hover:bg-[#357ABD] shadow-md w-full lg:w-auto"
       >
-        <div className="flex-1 mr-3 text-sm lg:text-md">
+        <div className="flex-1 mr-3 ">
           Foydalanuvchi ma'lumotlari
         </div>
         <div className="items-center border-l border-white lg:flex ">

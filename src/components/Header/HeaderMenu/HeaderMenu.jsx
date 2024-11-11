@@ -18,7 +18,7 @@ const HeaderMenu = () => {
   };
   const { t } = useTranslation();
   return (
-    <header className="header lg:static w-full z-[2000] bg-white px-[10px]">
+    <header className="header  lg:static w-full z-[2000] bg-white px-[10px]">
       <div className="container items-center    transition-all mx-auto py-[8px]  flex justify-between">
         <Logo active={active} />
         <div className="hidden md:block">

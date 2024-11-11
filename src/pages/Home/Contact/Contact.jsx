@@ -48,7 +48,7 @@ const Contact = () => {
   };
   const { t } = useTranslation();
   return (
-    <div className="container py-[50px] px-[10px] md:px-[20px] items-start pb-[50px]  flex-col  sm:flex-row  mx-auto flex justify-center gap-[30px] 2xl:gap-[150px]">
+    <div id="contact" className="container  py-[50px] px-[10px] md:px-[20px] items-start pb-[50px]  flex-col  sm:flex-row  mx-auto flex justify-center gap-[30px] 2xl:gap-[150px]">
       <div className=" text-white p-[20px] py-[30px] 2xl:p-[40px]  max-w-[403px] 2xl:py-[50px]  bg-main  w-full  md:rounded-[20px] rounded-[8px] mt-[5px]">
         <h1 className="text-[20px] 2xl:text-[26px]">
           {" "}

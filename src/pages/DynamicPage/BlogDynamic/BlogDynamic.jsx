@@ -16,7 +16,6 @@ const BlogDynamic = () => {
     t,
   } = useTranslation();
 
-// console.log(date_formatter(blog.date))
 
   return (
     !loading && (

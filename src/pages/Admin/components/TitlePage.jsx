@@ -31,13 +31,13 @@ const TitlePage = ({
   const handleAddClick = () => {
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
-    if (images.length > 1) {
+    if ( Array.isArray(images.length)) {
       for (let i = 0; i < images.length; i++) {
         formData.append("images", images[i]);
       }
     } else {
       formData.append("images", images);
-    }
+    } 
 
     if (formData) {
       if (formFull) {
@@ -50,18 +50,19 @@ const TitlePage = ({
     }
   };
   const updateItem = () => {
+    console.log(images)
     const formData = new FormData();
     formData.append(
       "data",
       JSON.stringify(single ? data : { ...data, images: oldImages })
     );
 
-    if (images.length > 1) {
+    if (Array.isArray(images.length)) {
       for (let i = 0; i < images.length; i++) {
         formData.append("images", images[i]);
       }
     } else {
-      formData.append("images", images[0]);
+      formData.append("images", images);
     }
 
     if (formData) {

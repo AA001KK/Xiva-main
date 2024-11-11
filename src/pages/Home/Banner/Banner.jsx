@@ -26,7 +26,10 @@ const Banner = () => {
           <p className="text-gray max-w-[650px] font-mono text-[15px]">
             {t(`sectionsData.bannerSection.p`)}
           </p>
+          <a href="#contact">
           <UniversalBtn txt={"main.buttons.contactBtn"} bg={"bg-main"} />
+
+          </a>
         </div>
         <div className="border-[1px]  hidden md:block 2xl:translate-x-[60px] translate-x-[50px] relative w-[240px] h-[400px] left-0   md:w-[402px] max-w-[400px] border-dashed border-[#EC6416] my-[50px] rounded-[217px] md:rounded-[257px]  md:h-[459px] lg:h-[659px]">
           <div className="translate-x-[-15px]  translate-y-[-10px]  rounded-[147px] overflow-hidden max-w-[400px] md:w-full h-full  md:rounded-[257px]">

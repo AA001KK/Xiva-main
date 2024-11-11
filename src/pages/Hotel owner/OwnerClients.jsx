@@ -18,8 +18,8 @@ const OwnerClients = () => {
       <TitlePage title={"Mijozlar"} />
 
       <div className="relative flex flex-col">
-        {data?.items?.map((order) => {
-          return <Client order={order} />;
+        {data?.items?.map((order, idx) => {
+          return <Client order={order} key={idx} />;
         })}
       </div>
       <Pagination

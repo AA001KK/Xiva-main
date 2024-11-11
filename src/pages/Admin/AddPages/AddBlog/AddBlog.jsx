@@ -118,33 +118,7 @@ const AddBlog = () => {
             ))}
           </div>
           <div className="flex w-full mx-8 mt-4">
-            <div className="flex  gap-[20px]  flex-col">
-              <div className="flex flex-col items-start">
-                <h1>Blog sanasi*</h1>
-                <DateInput changeHandlerDate={changeHandlerDate} />
-              </div>
-              <div className="flex flex-col items-start">
-                <h1>Temperatura*</h1>
-                <label
-                  htmlFor="temperature"
-                  className=" flex  w-[150px] items-center gap-[20px] justify-between   :border-main outline-none relative px-[20px]   py-[12px] border border-dashed border-grayLight rounded-[10px] ps-[20px]"
-                >
-                  <input
-                    onChange={changeHandlerSelf}
-                    name="temperature"
-                    id="temperature"
-                    className="w-full outline-none "
-                    type="number"
-                    placeholder="℃"
-                    required
-                  />
-                  <label htmlFor="temperature">
-                    <Icons.tempIcon />
-                  </label>
-                </label>
-              </div>
-            </div>
-            <div className=" flex-1   text-[16px] flex flex-col items-center font-normal   ">
+          <div className=" flex-1   text-[16px] flex flex-col items-center font-normal   ">
               <h1 className="">Rasm Yuklash*</h1>
 
               <label
@@ -192,6 +166,33 @@ const AddBlog = () => {
                 )}
               </label>
             </div>
+            <div className="flex  gap-[20px]  flex-col">
+              <div className="flex flex-col items-start">
+                <h1>Blog sanasi*</h1>
+                <DateInput changeHandlerDate={changeHandlerDate} />
+              </div>
+              <div className="flex flex-col items-start">
+                <h1>Temperatura*</h1>
+                <label
+                  htmlFor="temperature"
+                  className=" flex  w-[150px] items-center gap-[20px] justify-between   :border-main outline-none relative px-[20px]   py-[12px] border border-dashed border-grayLight rounded-[10px] ps-[20px]"
+                >
+                  <input
+                    onChange={changeHandlerSelf}
+                    name="temperature"
+                    id="temperature"
+                    className="w-full outline-none "
+                    type="number"
+                    placeholder="℃"
+                    required
+                  />
+                  <label htmlFor="temperature">
+                    <Icons.tempIcon />
+                  </label>
+                </label>
+              </div>
+            </div>
+           
           </div>
         </div>
         <div className=" flex  flex-col justify-between text-[15px] font-normal px-[30px] py-[10px]">

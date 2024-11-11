@@ -53,7 +53,7 @@ const ProductApproval = ({ product, orderId, onUpdateStatus }) => {
 
 
   return (
-    <div className=" w-full lg:text-[16px] text-[15px]">
+    <div className="  lg:text-[16px] text-[15px]">
       <div className="mb-2">
       <h1 className="text-grayLight ">
         Xolati:{" "}

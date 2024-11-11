@@ -6,6 +6,10 @@
   animation: dropdown 0.3s;
 }
 
+html {
+  scroll-behavior: smooth   ;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

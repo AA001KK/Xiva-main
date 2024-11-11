@@ -64,16 +64,16 @@ const Client = ({ order }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap gap-2 mt-2 lg:mt-0 lg:gap-4">
+        <div className="flex flex-row flex-wrap gap-2 lg:text-[17px]  mt-2 lg:mt-0 lg:gap-4">
           <UserModal userInfo={order.user} />
           <button
             onClick={toggleDropdown}
-            className="flex items-center justify-between rounded-md text-md font-semibold text-white bg-[#17a2b8] hover:bg-[#138496] transition-colors duration-300 shadow-md hover:shadow-lg"
+            className="flex items-center justify-between rounded-md  font-semibold text-white bg-[#17a2b8] hover:bg-[#138496] transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            <div className="flex items-center p-2.5  lg:px-6 lg:border-r border-white">
+            <div className="flex items-center p-2.5 py-[5px]  lg:py-2.5   lg:px-6 lg:border-r border-white">
               Batafsil
             </div>
-            <div className="flex items-center p-2.5  lg:px-4">
+            <div className="flex items-center p-2.5  py-[5px] lg:py-2.5 lg:px-4">
               <i
                 className={` ${
                   isOpen ? " rotate-[-180deg]" : ""

@@ -131,8 +131,6 @@ const HotelOwner = () => {
     setImagesPrev(hotelData.images);
   }, [hotelData]);
 
-  // console.log(imagesPrev.length);
-
   useEffect(() => {
     checkFormValidity();
   }, [object]);

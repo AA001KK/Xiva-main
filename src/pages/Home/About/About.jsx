@@ -38,9 +38,11 @@ const About = () => {
           <Criterion txt={`sectionsData.aboutSection.criterion3`} />
           <Criterion txt={`sectionsData.aboutSection.criterion2`} />
         </div>
+        <a href="#contact">
         <div className="flex mt-[50px] gap-[20px]  justify-center items-center">
           <UniversalBtn txt={"main.buttons.contactBtn"} bg={"bg-main"} />
         </div>
+        </a>
       </div>
       {/* Images  */}
       <div className="images md:relative">

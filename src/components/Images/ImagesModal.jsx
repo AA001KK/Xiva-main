@@ -47,7 +47,7 @@ const ImagesModal = ({ hotelData }) => {
         >
           <div className="container grid py-[20px] grid-cols-4 gap-2 mx-auto bg-white">
             {allImages.map((item, idx) => (
-              <img src={item} className="object-cover w-full h-full" alt="" />
+              <img key={idx} src={item} className="object-cover w-full h-full" alt="" />
             ))}
           </div>
           <div className="flex py-[20px] gap-4 text-[17px] justify-end">

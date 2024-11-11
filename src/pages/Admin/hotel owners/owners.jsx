@@ -134,9 +134,10 @@ export default function HotelOwners() {
                   id=""
                   onChange={(e) => setRole(e.target.value)}
                 >
-                  {ROLES.map((role) => {
+                  {ROLES.map((role, idx) => {
                     return (
                       <option
+                      key={idx}
                         value={role.role}
                         selected={role.role === user.role}
                       >
