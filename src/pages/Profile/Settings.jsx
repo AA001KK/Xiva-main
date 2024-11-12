@@ -53,13 +53,13 @@ const Settings = () => {
       setLoading(false);
     }
   };
-    return (
+  return (
     user && (
       <section className="container px-[10px] md:px-0 py-3 pb-6 md:pb-12 mx-auto mb-4 ">
         <div className="items-start font-mono text-center md:flex justify-evenly">
           <div className="relative border border-border border-solid md:w-[50%]  lg:mt-[103px] px-[10px] lg:px-12 py-4  rounded-xl text-[12px] shadow-md ">
             <h1 className="text-center   text-[25px] md:text-[35px]">
-            {t("main.forms.myProfile")}
+              {t("main.forms.myProfile")}
             </h1>
             <form
               onSubmit={handleSubmit}
@@ -72,12 +72,19 @@ const Settings = () => {
                 >
                   {t(`main.forms.labels.firstName`)}
                 </label>
-                {userInfo.first_name && (
+                {userInfo.first_name ? (
                   <Input
                     id={"first_name"}
                     func={changeUserInfo}
                     title={"First Name"}
                     def={userInfo.first_name}
+                    value={userInfo.first_name}
+                  />
+                ) : (
+                  <Input
+                    id={"first_name"}
+                    func={changeUserInfo}
+                    title={"First Name"}
                   />
                 )}
               </div>
@@ -88,7 +95,15 @@ const Settings = () => {
                 >
                   {t(`main.forms.labels.lastName`)}
                 </label>
-                {userInfo.last_name && (
+                {userInfo.last_name ? (
+                  <Input
+                    id={"last_name"}
+                    func={changeUserInfo}
+                    title={"Last Name"}
+                    def={userInfo.last_name}
+                    value={userInfo.last_name}
+                  />
+                ) : (
                   <Input
                     id={"last_name"}
                     func={changeUserInfo}
