@@ -15,14 +15,14 @@ const showEditSwal = (link, navigaPage, navigate, newFile, reload) => {
     showCancelButton: true,
     confirmButtonColor: "#4CAF50",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Ha, qo'shilsin!",
+    confirmButtonText: "Ha, yangilansin!",
     cancelButtonText: "Bekor qilish",
   }).then((result) => {
     if (result.isConfirmed) {
       // Show loading SweetAlert
       let timerInterval;
       Swal.fire({
-        title: "Fayl qo'shilmoqda...",
+        title: "Fayl yangilanmoqda...",
         html: "Iltimos kuting.",
         allowOutsideClick: false,
         didOpen: () => {

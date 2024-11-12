@@ -151,7 +151,7 @@ const HotelOwner = () => {
             link={`${
               user?.hotel ? `hotels/hotel/${user?.hotel}` : "hotels/hotel"
             }`}
-            navigaPage={"/hotel-owner"}
+            navigaPage={"/hotel-owner/hotel"}
             save={user?.hotel ? false : true}
             edit={user?.hotel ? true : false}
             title={"Mehmonxona Qo'shish"}
@@ -159,6 +159,7 @@ const HotelOwner = () => {
             data={object}
             images={newImages}
             oldImages={rasmlar}
+            reload={true}
           />
           <div className=" mt-[10px] flex  justify-between text-[16px] font-normal  px-[30px] py-[10px]">
             <div>

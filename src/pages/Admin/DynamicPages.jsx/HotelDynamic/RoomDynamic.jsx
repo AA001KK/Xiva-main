@@ -317,7 +317,7 @@ const RoomDynamic = ({ roomData, id }) => {
               ? `hotels/hotel/${id}/room/${roomData?._id}`
               : `hotels/hotel/${id}/room`
           }
-          navigaPage={`/hotel-owner`}
+          navigaPage={`/hotel-owner/hotel`}
           classNameList={"!border-b-0 !p-0 !items-end"}
           save={!roomData ? true : false}
           edit={roomData ? true : false}
@@ -325,7 +325,7 @@ const RoomDynamic = ({ roomData, id }) => {
           data={object}
           images={newImages}
           oldImages={rasmlar}
-          reload={false}
+          reload={true}
         />
       </div>
     </div>

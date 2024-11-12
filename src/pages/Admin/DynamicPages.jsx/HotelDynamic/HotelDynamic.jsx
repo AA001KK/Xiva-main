@@ -155,12 +155,13 @@ const HotelDynamicAdmin = () => {
         >
           <TitlePage
             link={`hotels/hotel/${id}`}
-            navigaPage={"hotels"}
+            navigaPage={"hotels/hotel"}
             del
             title={"Mehmonxona Qo'shish"}
             formFull={isFormComplete}
             data={object}
             images={rasmlar}
+            reload={true}
           />
           <div className=" mt-[10px] flex  justify-between text-[16px] font-normal  px-[30px] py-[10px]">
             <div>

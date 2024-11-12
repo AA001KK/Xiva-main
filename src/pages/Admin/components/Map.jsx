@@ -6,7 +6,7 @@ import L from "leaflet";
 // Настраиваем пути к изображениям маркера
 delete L.Icon.Default.prototype._getIconUrl;
 
-
+<nhgfdsdfghjkjhuygtfrdtyuioploiuytrewqqqwertyuiop poiuytrew="-098765432456789"></nhgfdsdfghjkjhuygtfrdtyuioploiuytrewqqqwertyuiop>
 // Устанавливаем пути к изображениям иконки
 L.Icon.Default.mergeOptions({
   iconUrl: new URL("leaflet/dist/images/marker-icon.png", import.meta.url).href,

@@ -12,10 +12,10 @@ const HotelAdmin = ({ hotel }) => {
   const [status, setStatus] = useState(hotel.status);
   const handleAddClick = async () => {
     const { data } = await showEditSwal(
-      `/hotels/hotel/confirm/${hotel._id}?status=${!status}`
+      `/hotels/hotel/confirm/${hotel._id}?status=${!status}`, null, null, null, true
     );
+    
     setStatus(!status);
-    console.log(12);
   };
 
   return (
