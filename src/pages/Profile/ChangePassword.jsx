@@ -149,7 +149,7 @@ const ChangePassword = () => {
 
         <div className="flex justify-end w-full ">
         <DefaultBtn
-                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
+                    classNameList="px-[40px]  lg:bg-main lg:text-white"
                     txt={`main.buttons.changePassword`}
                     loading={loading}
                     more={{ type: "submit" }}
