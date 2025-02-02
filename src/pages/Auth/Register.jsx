@@ -25,6 +25,7 @@ const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
+  const [errorParol, setErrorParol] = useState(false);
   const { t, i18n } = useTranslation();
 
   const changeUserInfo = (e) => {
@@ -42,7 +43,9 @@ const Register = () => {
   const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
+    console.log();
+    
+    if (password === confirmPassword && password.length>8 ) {
       setRegisterInfo((prev) => {
         return {
           ...prev,
@@ -55,6 +58,8 @@ const Register = () => {
         localStorage.setItem("acsess-token", res.data.token);
         dispatch(userRegistered());
         setErrorMsg(false);
+        setErrorParol(false)
+
         if (res.data.err) {
           toast.error(t("toasts.register.accountExists"));
         } else {
@@ -69,15 +74,25 @@ const Register = () => {
         setLoading(false);
       }
     } else {
-      setErrorMsg(true);
+      if(password.length<8) {
+        setErrorParol(true)
+        setErrorMsg(false);
+
+      } 
+      else {
+        setErrorParol(false)
+
+        setErrorMsg(true);
+      }
+
     }
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen">
+    <div className="relative flex flex-col items-center justify-center">
       <ToastContainer position="top-center" closeButton={false} />
 
-      <div className="container flex items-center justify-center mx-auto ">
+      <div className="container  flex items-center justify-center mx-auto ">
         <div className="z-10 flex items-center md:h-auto lg:static md:w-1/2">
           <div className=" 2xl:pt-[60px] relative px-4   md:px-0  login py-12 md:ps-[0px] xl:ps-[40px] flex flex-col justify-center   2xl:ps-[70px]">
             <div className="flex items-center justify-between ">
@@ -105,10 +120,22 @@ const Register = () => {
                     : " opacity-0  translate-y-[-100px] hidden "
                 } relative wrong text-[12px]  md:text-[14px] p-[10px] mt-[20px] border border-main text-center bg-[#ffebe8] rounded-[6px] `}
               >
-                <h1 className="font-bold "> Parol hato </h1>
-                <p>Parol hato</p>
-                {/* <h1 className="font-bold "> {t("wrongPassword")} </h1>
-                <p>{t("invalidPassword")}</p> */}
+                <h1 className="font-bold ">      {t(`toasts.register.passwordErrorTitle`)}</h1>
+                <p>{t(`toasts.register.confirmPasswordErrorMessage`)}</p>
+               
+              </div>
+
+              <div
+                className={`${
+                  errorParol
+                    ? " block opacity-1 z-[19]"
+                    : " opacity-0  translate-y-[-100px] hidden "
+                } relative wrong text-[12px]  md:text-[14px] p-[10px] mt-[20px] border border-main text-center bg-[#ffebe8] rounded-[6px] `}
+              >
+                {/* <h1 className="font-bold "> Parol hato </h1>
+                <p>Parol hato</p> */}
+                        <h1 className="font-bold ">      {t(`toasts.register.passwordErrorTitle`)}</h1>
+                        <p>{t(`toasts.register.passwordErrorMessage`)}</p>
               </div>
               <div className="relative  mt-[20px] text-[12px]      ">
                 <form
