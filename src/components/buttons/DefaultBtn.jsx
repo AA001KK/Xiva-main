@@ -7,7 +7,7 @@ const DefaultBtn = ({ text, classNameList, click, loading, more, txt }) => {
       onClick={click}
       disabled={loading}
       type="submit"
-      className={`flex text-white md:text-white flex-col items-center justify-center relative py-[8px]  px-[18px] select-none text-[14px]  md:text-[17px] md:rounded-[8px] rounded-[6px]   2xl:py-[10px] xl:py-[8px] xl:px-[20px]  xl:rounded-[8px]  font-mono  bg-main ${classNameList}`}
+      className={`flex text-main md:text-white flex-col items-center justify-center relative py-[8px]  px-[18px] select-none text-[14px]  md:text-[17px] md:rounded-[8px] rounded-[6px]   2xl:py-[10px] xl:py-[8px] xl:px-[20px]  xl:rounded-[8px]  font-mono  bg-main ${classNameList}`}
       {...more}
     >
       {loading && (
