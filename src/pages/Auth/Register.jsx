@@ -291,7 +291,7 @@ const Register = () => {
                   </div>
 
                   <DefaultBtn
-                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
+                    classNameList="px-[40px] bg-white text-main lg:bg-main lg:text-white"
                     txt={`main.forms.labels.registerTitle`}
                     loading={loading}
                     more={{ type: "submit" }}
