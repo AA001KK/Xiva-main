@@ -57,7 +57,7 @@ const Settings = () => {
     user && (
       <section className="container px-[10px] md:px-0 py-3 pb-6 md:pb-12 mx-auto mb-4 ">
         <div className="items-start font-mono text-center md:flex justify-evenly">
-          <div className="relative border border-border border-solid md:w-[50%]  lg:mt-[103px] px-[10px] lg:px-12 py-4  rounded-xl text-[12px] shadow-md ">
+          <div className="relative border border-border border-solid md:w-[50%] px-[10px] lg:px-12 py-4  rounded-xl text-[12px] shadow-md ">
             <h1 className="text-center   text-[25px] md:text-[35px]">
               {t("main.forms.myProfile")}
             </h1>
@@ -160,6 +160,8 @@ const Settings = () => {
                 <DefaultBtn
                   txt="main.buttons.change"
                   loading={loading}
+                  classNameList="px-[30px]  text-white"
+
                   more={{ type: "submit" }}
                 />
               </div>
