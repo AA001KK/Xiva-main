@@ -94,7 +94,7 @@ const Register = () => {
 
       <div className="container  flex items-center justify-center mx-auto ">
         <div className="z-10 flex items-center md:h-auto lg:static md:w-1/2">
-          <div className=" 2xl:pt-[60px] relative px-4   md:px-0  login py-12 md:ps-[0px] xl:ps-[40px] flex flex-col justify-center   2xl:ps-[70px]">
+          <div className=" 2xl:pt-[60px] relative px-4   md:px-0   py-12 md:ps-[0px] xl:ps-[40px] flex flex-col justify-center   2xl:ps-[70px]">
             <div className="flex items-center justify-between ">
               <Link to={"/"}>
                 <SectionDesign
@@ -108,7 +108,7 @@ const Register = () => {
             </div>
             <div
               action="#"
-              className=" lg:pt-12 xl:ps-[70px] mt-[23px] lg:mt-103px]"
+              className=" lg:pt-12 login border-white border lg:border-none rounded-md p-[10px] xl:ps-[70px] mt-[23px] lg:mt-103px]"
             >
               <h1 className=" text-[20px] md:text-[30px] text-white md:text-main font-bold text-center">
                 {t(`main.forms.labels.registerTitle`)}
@@ -291,7 +291,7 @@ const Register = () => {
                   </div>
 
                   <DefaultBtn
-                    classNameList="px-[40px] bg-white text-main lg:bg-main lg:text-white"
+                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
                     txt={`main.forms.labels.registerTitle`}
                     loading={loading}
                     more={{ type: "submit" }}
