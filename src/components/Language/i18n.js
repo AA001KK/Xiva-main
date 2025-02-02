@@ -90,7 +90,14 @@ i18next
                 "Ссылка для подтверждения отправлена на вашу почту.",
               registrationError:
                 "Произошла ошибка при регистрации. Повторите попытку позже.",
+                passwordErrorTitle: "Ошибка при создании пароля", 
+                passwordErrorMessage: "Пароль должен содержать не менее 8 символов.",
+                confirmPasswordErrorMessage: "Пароли не совпадают. Проверьте введенные данные.",
+                
             },
+            settings: {
+              passwordChangeSuccess:  "Пароль успешно изменен.",
+            }
           },
 
           wrongPassword: "Неверные учетные данные",
@@ -417,7 +424,14 @@ i18next
               accountExists: "An account with this email already exists.",
               verificationLinkSent: "A verification link has been sent to your email.",
               registrationError: "An error occurred during registration. Please try again later.",
+               passwordErrorTitle: "Error creating password",
+                passwordErrorMessage: "The password must contain at least 8 characters.",
+                confirmPasswordErrorMessage: "Passwords do not match. Please check the entered data.",
+
             },
+            settings: {
+              passwordChangeSuccess:  "Password successfully changed.",
+            }
           },
           translators: {
             museums: {
@@ -753,7 +767,15 @@ i18next
               accountExists: "Ein Konto mit dieser E-Mail-Adresse existiert bereits.",
               verificationLinkSent: "Ein Bestätigungslink wurde an Ihre E-Mail gesendet.",
               registrationError: "Ein Fehler ist bei der Registrierung aufgetreten. Bitte versuchen Sie es später erneut.",
+              passwordErrorTitle: "Fehler bei der Passworterstellung",
+              passwordErrorMessage: "Das Passwort muss mindestens 8 Zeichen enthalten.",
+              confirmPasswordErrorMessage: "Die Passwörter stimmen nicht überein. Bitte überprüfen Sie die eingegebenen Daten.",
+
+
             },
+            settings: {
+              passwordChangeSuccess: "Passwort erfolgreich geändert.",
+            }
           },
           translators: {
             museums: {
@@ -1079,7 +1101,14 @@ i18next
               accountExists: "此电子邮件的帐户已存在。",
               verificationLinkSent: "验证链接已发送到您的电子邮件。",
               registrationError: "注册过程中发生错误。请稍后再试。",
+              passwordErrorTitle: "创建密码时出错",
+              passwordErrorMessage: "密码必须至少包含 8 个字符。",
+              confirmPasswordErrorMessage: "密码不匹配。请检查输入的数据。"
+
             },
+            settings: {
+              passwordChangeSuccess: "密码成功更改。"
+            }
           },          
           translators: {
             translatorFilters: {
