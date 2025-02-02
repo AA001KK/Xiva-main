@@ -3,7 +3,7 @@ import DefaultBtn from "../../components/buttons/DefaultBtn";
 import showEditSwal from "../../components/buttons/EditSwal";
 import { useTranslation } from "react-i18next";
 import publicAxios from "../../api";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify"; 
 
 const ChangePassword = () => {
   const [password, setPassword] = useState("");
