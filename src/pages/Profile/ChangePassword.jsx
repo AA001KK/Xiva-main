@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import DefaultBtn from "../../components/buttons/DefaultBtn";
 import showEditSwal from "../../components/buttons/EditSwal";
 import { useTranslation } from "react-i18next";
+import publicAxios from "../../api";
+import { ToastContainer, toast } from "react-toastify";
 
 const ChangePassword = () => {
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -14,16 +18,38 @@ const ChangePassword = () => {
   const { t } = useTranslation();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (newPassword !== confirmPassword) {
-      setErrMsg(true);
+    if (newPassword !== confirmPassword ||  newPassword.length<8) {
+      if(newPassword.length<8) {
+        toast.error(t("toasts.register.passwordErrorMessage"));
+      }
+      else {
+
+        setErrMsg(true);
+        toast.error(t("toasts.login.incorrectPassword"));
+      }
+
     } else {
       try {
+      setLoading(true);
+
         // await publicAxios.put('users/user/password', { password, new_password: newPassword })
-        showEditSwal("users/user/password", null, null, {
+        // showEditSwal("users/user/password", null, null, {
+        //   password,
+        //   new_password: newPassword,
+        // });
+        const res = await publicAxios.put("users/user/password", {
           password,
           new_password: newPassword,
         });
-      } finally {
+      toast.success((t("toasts.settings.passwordChangeSuccess")));
+      } catch  (error) {
+        toast.error(t("toasts.login.incorrectPassword"));
+
+      }   
+       finally {
+
+      setLoading(false);
+
         setErrMsg(false);
       }
     }
@@ -122,7 +148,13 @@ const ChangePassword = () => {
         </div>
 
         <div className="flex justify-end w-full ">
-          <DefaultBtn txt="main.buttons.changePassword" />
+        <DefaultBtn
+                    classNameList="px-[40px] bg-white lg:bg-main lg:text-white"
+                    txt={`main.buttons.changePassword`}
+                    loading={loading}
+                    more={{ type: "submit" }}
+                  />
+          {/* <DefaultBtn txt="main.buttons.changePassword" /> */}
         </div>
       </form>
     </div>
